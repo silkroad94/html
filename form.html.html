@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        <form> 
+            속성 - action: <form> 태그 안의 내용을 전송할 서버의 주소
+                   method: 입력한 내용을 서버로 전달하는 방식을 지정
+                        - get: 주소 표시줄에 사용자가 입력한 내용이 그대로 노출된다.
+                               입력 내용 길이에 제한이 있다.(최대 4096바이트 까지만 전송 가능)
+                        - post: 입력 내용의 길이에 제한이 없고, 입력한 내용이 주소 표시줄에 노출되지 않는다.
+    -->
+    <form action="join" method="get">
+
+        <label for="id">아이디: </label>
+        <input type="text" id="id" name="id"><br>
+
+        <label for="name">이름: </label>
+        <input type="text" id="name" name="name"><br>
+
+        <label>비밀번호: 
+            <input type="password" name="password" id="password">
+        </label><br>
+
+        <label for="birth">생년월일: </label>
+        <input type="date" name="birth" id="birth"><br>
+
+        <label for="email">이메일: </label>
+        <input type="email" name="email" id="email"><br>
+
+        <label for="quantity">수량: </label>
+        <input type="number" name="quantity" id="quantity"><br>
+
+        <label for="vol">볼륨: </label>
+        <input type="range" name="vol" id="vol" min="0" max="10"><br>
+
+        <label for="search">검색: </label>
+        <input type="search" name="search" id="search"><br>
+
+        <label for="phone">전화번호: </label>
+        <input type="tel" name="phone" id="phone"><br>
+
+        <label for="homepage">홈페이지: </label>
+        <input type="url" name="homepage" id="homepage"><br>
+
+        <label for="city">도시: </label>
+        <select name="city" id="city">
+            <option value="seoul">서울</option>
+            <option value="busan">부산</option>
+            <option value="daegu">대구</option>
+        </select><br>
+
+         <label for="file">파일 업로드</label>
+         <input type="file" name="file" id="file"><br>
+
+         <!--radio는 name은 같아야 하고 id는 각각의 값을 넣어줌. 한가지만 선택가능-->
+         <input type="radio" name="gender" id="male" value="male">
+         <label for="gender">남성</label>
+         <input type="radio" name="gender" id="female" value="female">
+         <label for="gender">여성</label><br>
+
+         <!--다중 선택 가능함-->
+         <input type="checkbox" name="hobby" id="soccer" value="soccer">
+         <label for="soccer">축구</label>
+         <input type="checkbox" name="hobby" id="baseball" value="baseball">
+         <label for="baseball">야구</label>
+         <input type="checkbox" name="hobby" id="swimming" value="swimming">
+         <label for="swimming">수영</label><br>
+
+         <label for="message">메시지: </label>
+         <textarea name="message" id="message" cols="50" rows="10">안녕하세요.
+ 어떤 장르의 영화를 좋아하시나요?
+         </textarea><br>
+
+         <input type="button" value="클릭하세요" onclick="alert('Hello World')"><br>
+
+
+
+         <input type="reset" value="취소하기">
+        <input type="submit" value="전송하기">      <!--입력한 값을 최종적으로 서버에 전송하기 위한 버튼-->
+
+
+        <!--http://127.0.0.1:5500/html/join?id=silkroad94&name=윤명주&password=1234-->
+        <!--http: Hyper Text Transfer protocol: Hyper Text Transfer를 전송할 수 있는 규약(Protocol)-->
+        <!--127.0.0.1: IP Address 혹은 도메인-->
+        <!--:5500: Port번호-->                                  <!--여기까지 서버의 주소임-->
+        <!--html: 루트 경로, 서버의 경로-->
+        <!--join: 위에 form에서 action에 지정한 경로임.-->       <!--url 요청-->
+        <!--?: url에 붙어서 전송되는 데이터-->
+        <!--주소참에 노출되어서 전송되는 방식: get 방식: 따로 지정하지 않으면 디폴트로 get방식으로 전송이 됨  -->
+
+        <!--클라이언트(웹브라우저) ->  요청(request)   ->  서버  -> 처리
+                                <-        응답(response)       <-     -->
+    </form>
+</body>
+</html>
